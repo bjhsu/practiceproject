@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    
+    <ion-title>Page Three</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="onCreateListing()">
+  <ion-list>
+  <ion-item>
+    <ion-label color="primary">Name</ion-label>
+    <ion-input type="text" [(ngModel)]="todo.name" name="name" placeholder="enter name here"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" fixed>Description</ion-label>
+    <ion-input type="text" [(ngModel)]="todo.description" name="description" placeholder="enter description here"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" stacked>Price</ion-label>
+    <ion-input type="number"[(ngModel)]="todo.price" name="price" placeholder="enter price here"></ion-input>
+  </ion-item>
+
+ 
+
+  <button ion-button round type="submit">Submit
+  </button>
+</ion-list>
+</form>
+</ion-content>

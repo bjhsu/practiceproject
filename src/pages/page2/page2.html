@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Page Two</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+    <button ion-item *ngFor="let item of items">
+      <ion-icon item-left></ion-icon>
+      {{item.title}}
+      <div class="item-note" item-right>
+        {{item.note}}
+      </div>
+    </button>
+  </ion-list>
+  <div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title}}</b>
+  </div>
+  <ion-fab left bottom>
+    <button ion-fab color="danger"><ion-icon name="arrow-dropright"></ion-icon></button>
+    <ion-fab-list side="right">
+      <button ion-fab color="danger" (click)="consoleTest()"><ion-icon name="logo-facebook"></ion-icon></button>
+      <button ion-fab color="primary"><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="movePageThree()">
+      <ion-icon name="add">
+      </ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
